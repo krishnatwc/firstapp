@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="default-src *  data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src * 'unsafe-inline'; media-src *; script-src * 'unsafe-inline' " />
+	-->
+    <!--
+	<meta http-equiv="Content-Security-Policy" content="img-src * 'self'; default-src *;  style-src * 'self' 'unsafe-inline' 'unsafe-eval';  script-src * 'self' 'unsafe-inline' 'unsafe-eval';"> -->
+
+    <meta http-equiv="Content-Security-Policy" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Path to Framework7 Library CSS-->
+      <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/my-app.css">
+	
+	
+	 
+    <title>Hello App</title>
+	
+</head>
+
+<body class="theme-green">
+<div class="panel-overlay"></div>
+	<div class="lds-grid-loading  pageFlashLoaderKK" style="display:none;">
+	  
+	  <div class="lds-grid">
+	   
+		 <img src="https://loading.io/assets/img/p/landing/comment.svg" style="margin:25px;width:100px;height;100px;">
+	   </div>
+	</div>
+
+	
+	   <div class="panel panel-left panel-cover">
+        <div class="view navbar-fixed">
+            <div class="pages">
+                <div data-page="panel-left" class="page">
+                     <div class="page-content BontentBlockDrawer">
+                        <div class="content-block panel-background">
+                            <p>
+								<a href="#" class="mobileLogo"><img src="img/logo_1.png" alt=""></a>
+							</p>
+							
+                        </div>
+                   <div class="overlaycolor"></div>
+					   <div class="list-block">
+            <ul>
+                <li>
+                    <a href="search-hotels.html?hotelType=1" class="item-link item-content close-panel">
+                        <div class="item-media"><i class="material-icons color-green">hotel</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Hotels</div>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="search-flights.html" class="item-link item-content close-panel">
+                        <div class="item-media"><i class="material-icons color-green">flight</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Flights</div>
+
+                        </div>
+                    </a>
+                </li>
+             
+               
+             
+                <li>
+                    <a href="contact-us.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Contact us</div>
+
+                        </div>
+                    </a>
+                </li>
+				<li>
+                    <a href="login-page.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Login</div>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="my-booking.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">My Booking</div>
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+					   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="views">
+        <div class="view view-main" data-page="index">
+            <div class="pages navbar-fixed toolbar-fixed">
+                <div class="page pageBackgroundColor" data-page="index">
+                    <div class="navbar box-shadow-none">
+                        <div class="navbar-inner box-shadow-none">
+                            <div class="left"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+                           
+
+                        </div>
+                    </div>
+                    
+                    <div class="page-content home-page-padding">
+                        <div class="HomeCard">
+                            <div class="carBackColor">
+                                <a href="#" class="HomeLogoimg"><img src="img/logo_1.png"></a>
+									<div class="Searchall">Book Your Ideal Hotels and Flights - Search, Compare and Save Money with Adivaha</div>
+                                <div class="card-content-inner1">
+                                    <div class="" id="chevron">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card homeadCard buttonhomecard">
+                                <div class="card-content">
+                                    <ul class="contentblock1">
+									
+										<li><a href="search-hotels.html?hotelType=1" class="hotelsicons"><i class="fa fa-bed"></i><span class="displaysection">Hotels</span></a></li>
+										
+										<li> <a href="search-flights.html" class=""><i class="fa fa-plane"></i><span class="displaysection"> Flights</span></a></li>
+										
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+						<div class="overlayDivhome">					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    
+ <script type="text/javascript" src="js/my-app.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+		var readyStateCheckInterval = setInterval(function() {iFrameResize({ log: true,onMessage: function(messageData) {
+		  if(messageData.message.p=='hotel_detail'){
+            document.getElementById("app_hoteldetailLink").setAttribute('href',messageData.message.data);			
+			document.getElementById("app_hoteldetailLink").click();
+		  }
+		  else{
+          document
+            .getElementsByTagName('iframe')[0]
+            .iFrameResizer.sendMessage('Hello back from parent page')
+		  }
+			
+			
+        } });}, 10);
+    </script>
+</body>
+
+</html>

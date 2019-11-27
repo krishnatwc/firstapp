@@ -1,0 +1,34 @@
+<div class="page search-resultspage" data-page="search-results">
+ <input type="hidden" name="search_Session_Id" id="search_Session_Id" value="">
+ <input type="hidden" name="totalrecords" id="totalrecords" value="">
+ <input type="hidden" name="sortField" id="sortField" value="">
+ <input type="hidden" name="sortby" id="sortby" value=""> 
+ <input type="hidden" name="cur_rent_lat" id="cur_rent_lat" value="">
+ <input type="hidden" name="cur_rent_lon" id="cur_rent_lon" value=""> 
+ <input type="hidden" name="resultsType" id="resultsType" value="hotel"> 
+ 
+ 
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="left"><a href="#index" class="link back with-animation"><i class="material-icons">keyboard_arrow_left</i> </a>
+				
+				 <div class="item-inner">
+		<div class="item-title-row">
+		  <div class="item-title search-resultsPageNavbarTitle">New Delhi</div>
+		</div>
+		<div class="item-subtitle search-resultsPageNavbarTitlef"></div>
+		
+	  </div>
+		</div>
+		<div class="right"><a href="hotel-detail.html" class="link" id="app_hoteldetailLink"><i class="material-icons"></i></a></div>
+		
+		</div>
+	</div>
+
+	<div data-distance="50" id="searchpageContentDiv" class="page-content padding-top-56">
+	
+	   <iframe src="" scrolling="no" frameborder="0" style="width: 100%;overflow: hidden;height:100%;" id="iFrameResizer0"></iframe>
+	</div>
+	 <div class="panel-overlay"></div>
+
+ </div>  

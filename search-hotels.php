@@ -1,19 +1,13 @@
-<div class="page search-hotelspage" data-page="search-hotels">
+<div class="page" data-page="search-hotels">
         <div class="navbar">
-            <div class="navbar-inner">
-                <div class="left"><a href="#index" class="link back with-animation"><i class="material-icons">arrow_back</i> 
-					<span class="BoxPageNavbarTitle">Hotels Search </span></a></div>
-                <!--<div class="right"> 
-						<a href="#" data-panel="right" class="open-panel link" ><i class="material-icons">restore</i></a>
-				
-			<!--	<a href="" class="link open-panel"><i class="material-icons">restore</i></a>
-				
-				
-				</div>-->
-            </div>
+          <div class="navbar-inner">
+            <div class="left"><a href="#index" class="link back with-animation"><i class="material-icons">keyboard_arrow_left</i> </a></div>
+            <div class="left">Hotels Search</div>
+          
+        </div>
         </div>
     
-        <div class="page-content">
+        <div class="page-content padding-top-56">
 		<div class="content-block-title boxPage-title"><i class="material-icons"> my_location</i> <span class="BoxPageHotelNear">I need a place tonight!</span></div>
 			
        <form class="BoxPageForm" name="searchHotel_frm" id="searchHotel_frm">   
@@ -71,7 +65,7 @@
 				</div>
 			 
 			 
-			 <a href="#" class="findHotelResults with-animation"><div class="btnHotelrel">SEARCH HOTELS</a></div>
+			 <div class="btnHotelrel"><a href="#" class="findHotelResults">SEARCH HOTELS</a></div>
 			 
 			 
 			 
@@ -142,7 +136,7 @@
 	  <div class="popup aautocomplete-standalone-popup">
 		 <div class="navbar">
            <div class="navbar-inner">
-             <div class="left"><a href="" class="link close-popup"><i class="material-icons">arrow_back</i> 
+             <div class="left"><a href="" class="link close-popup back with-animation"><i class="material-icons">keyboard_arrow_left</i> 
 			   <span class="BoxPageNavbarTitle" id="roomGuestTxt">1 Rooms, 1 Guests </span></a></div>
               <!--<div class="right"> <a href="" class="link"><i class="material-icons">restore</i></a></div>-->
             </div>
@@ -205,11 +199,10 @@
 			</div>
 		</div>
 	  </div><!-- End Room List-->	
-	  <!--
 	  <div class="btn_addRooms">
 	   <a href="#" class="addMoreRooms">Add Another Rooms</a>
 	   <input type="hidden" name="number_of_rooms" id="number_of_rooms" value="1">
-	  </div>-->
+	  </div>
 	   <a href="#" class="close-popup"><div class="btn_DoneRooms">Done</div></a>
     </div>
 	
