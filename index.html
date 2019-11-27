@@ -45,91 +45,110 @@
     <meta http-equiv="Content-Security-Policy" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Path to Framework7 Library CSS-->
+      <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-appns.css">
-	<link rel="stylesheet" href="css/my-app.css">
-	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyB2xTOKHvuxgfndELjPAFrfYvoUbWLWhGo&sensor=false&libraries=places&"></script>
-	<script src="js/infobox.js"></script> 
+    <link rel="stylesheet" href="css/my-app.css">
+	
+	
 	 
-    <title>Travellabs252 App</title>
+    <title>Hello App</title>
 	
 </head>
 
 <body class="theme-green">
+<div class="panel-overlay"></div>
 	<div class="lds-grid-loading  pageFlashLoaderKK" style="display:none;">
-	  <div class="lds-grid">
-	    <img src="img/logo_1.png">
-	    <!--<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>-->
-	  </div>
-	  <div class="lds-grid">
-	   <img src="img/logo_5.svg" style="margin:25px;">
-	  </div>
 	  
+	  <div class="lds-grid">
+	   
+		 <img src="https://loading.io/assets/img/p/landing/comment.svg" style="margin:25px;width:100px;height;100px;">
+	   </div>
 	</div>
-    <div class="panel panel-left panel-cover">
+
+	
+	   <div class="panel panel-left panel-cover">
         <div class="view navbar-fixed">
             <div class="pages">
                 <div data-page="panel-left" class="page">
-                   <!-- <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="center">Left Panel mkdd <a href="#" class="close-panel">close me</a></div>
-                        </div>
-                    </div>-->
-
-                    <div class="page-content BontentBlockDrawer">
+                     <div class="page-content BontentBlockDrawer">
                         <div class="content-block panel-background">
-                            <p> <a href="#" class="close-panel"><i class="fa fa-times" aria-hidden="true"></i></a>
-							
-							<a href="#" class="mobileLogo"><img src="img/logo_1.png" alt=""></a>
-						
+                            <p>
+								<a href="#" class="mobileLogo"><img src="img/logo_1.png" alt=""></a>
 							</p>
-							<div class="overlayContent">
 							
-							</div>
                         </div>
-                       <div class="list-menu-mobile">
-							<ul class="beforeLogin" id="leftMenuBar">
-								<li><a href="" class="close-panel"><i class="fa fa-home"></i>Home</a></li>
-								<li><a href="search-hotels.html?hotelType=1" class="close-panel"><i class="fa fa-bed"></i>Hotel</a></li>
-								
-								<li><a href="search-flights.html" class="close-panel"><i class="fa fa-plane"></i>Flight</a></li>
-								<li><a href="search-hotels.html?hotelType=5" class="close-panel"><i class="fa fa-coffee"></i>BnB</a></li>
-								<li><a href="search-hotels.html?hotelType=3" class="close-panel"><i class="fa fa-home"></i>Resort</a></li>
-								<li><a href="search-activity.html" class="close-panel"><i class="fa fa-street-view"></i>Activity</a></li>
-								<li><a href="contact-us.html" class="close-panel"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-								<li><a href="login-page.html" class="close-panel"><i class="fa fa-user"></i> My Booking</a></li>
-								<li><a href="login-page.html" class="close-panel"><i class="fa fa-user"></i>Login</a></li>
-							</ul>
-							
-							<ul class="afterLogin" id="leftMenuBar">
-								<li><a href="" class="close-panel"><i class="fa fa-home"></i>Home</a></li>
-								<li><a href="search-hotels.html?hotelType=1" class="close-panel"><i class="fa fa-bed"></i>Hotel</a></li>
-								<li><a href="search-flights.html" class="close-panel"><i class="fa fa-plane"></i>Flight</a></li>
-								<li><a href="search-hotels.html?hotelType=5" class="close-panel"><i class="fa fa-coffee"></i>BnB</a></li>
-								<li><a href="search-hotels.html?hotelType=3" class="close-panel"><i class="fa fa-home"></i>Resort</a></li>
-								<li><a href="search-activity.html" class="close-panel"><i class="fa fa-street-view"></i>Activity</a></li>
-								<li><a href="contact-us.html" class="close-panel"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-								<li><a href="booking.html" class="close-panel"><i class="fa fa-user"></i> My Booking</a></li>
-								<li><a href="" class="close-panel"><i class="fa fa-user"></i>Logout</a></li>
-							</ul>
-							
-					   </div>
+                   <div class="overlaycolor"></div>
+					   <div class="list-block">
+            <ul>
+                <li>
+                    <a href="search-hotels.html?hotelType=1" class="item-link item-content close-panel">
+                        <div class="item-media"><i class="material-icons color-green">hotel</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Hotels</div>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="search-flights.html" class="item-link item-content close-panel">
+                        <div class="item-media"><i class="material-icons color-green">flight</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Flights</div>
+
+                        </div>
+                    </a>
+                </li>
+             
+               
+             
+                <li>
+                    <a href="contact-us.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Contact us</div>
+
+                        </div>
+                    </a>
+                </li>
+				<li>
+                    <a href="login-page.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Login</div>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="my-booking.html" class="item-link item-content open-login-screen close-panel">
+                        <div class="item-media"><i class="material-icons color-green">account_circle</i></div>
+                        <div class="item-inner">
+                            <div class="item-title">My Booking</div>
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+					   
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="views">
-        <div class="view view-main">
+        <div class="view view-main" data-page="index">
             <div class="pages navbar-fixed toolbar-fixed">
                 <div class="page pageBackgroundColor" data-page="index">
-                    <div class="navbar theme-red">
-                        <div class="navbar-inner">
-                            <div class="left"><!--<a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a>--></div>
+                    <div class="navbar box-shadow-none">
+                        <div class="navbar-inner box-shadow-none">
+                            <div class="left"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
                            
 
                         </div>
@@ -139,7 +158,7 @@
                         <div class="HomeCard">
                             <div class="carBackColor">
                                 <a href="#" class="HomeLogoimg"><img src="img/logo_1.png"></a>
-									<div class="Searchall">Search all travel deals, in one go</div>
+									<div class="Searchall">Book Your Ideal Hotels and Flights - Search, Compare and Save Money with Adivaha</div>
                                 <div class="card-content-inner1">
                                     <div class="" id="chevron">
                                       
@@ -151,77 +170,15 @@
                                 <div class="card-content">
                                     <ul class="contentblock1">
 									
-										<li><a href="search-hotels.html?hotelType=1" class=""><i class="fa fa-bed"></i><span class="displaysection">Hotels</span></a></li>
+										<li><a href="search-hotels.html?hotelType=1" class="hotelsicons"><i class="fa fa-bed"></i><span class="displaysection">Hotels</span></a></li>
 										
 										<li> <a href="search-flights.html" class=""><i class="fa fa-plane"></i><span class="displaysection"> Flights</span></a></li>
-										<!--
-										<li>  <a href="search-hotels.html?hotelType=5" class=""><i class="fa fa-coffee"></i><span class="displaysection"> BnB </span></a></li>
 										
-										<li><a href="search-hotels.html?hotelType=3" class="" ><i class="fa fa-home"></i><span class="displaysection"> Resort</span></a> </li>
-										<li> <a href="search-activity.html" class=""><i class="fa fa-street-view"></i><span class="displaysection">  Activity</span></a></li>
-										
-										<li> <a href="contact-us.html" class=""><i class="fa fa-envelope-o"></i><span class="displaysection">   Contact Us</span></a></li>-->
-                                      
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                     <div class="history-home-page">
-						<div class="history-home-page-main"  id="storeHotelLists">
-						
-							<div class="history-home-page-main-left">
-								<i class="fa fa-home"></i>
-							</div>
-							<div class="history-home-page-main-right">
-								<div class="history-home-text">New Delhi </div>
-								<div class="history-home-text1">Fir, 25 May - Sat, 26 May </div>
-								<div class="history-home-text2"><i class="fa fa-user"></i> 2 Guests </div>
-								<div class="history-home-text3"><i class="fa fa-bed"></i>1 Room </div>
-							</div>
-							
-						</div>
-					 </div>
-					  <div class="history-home-page">
-						<div class="history-home-page-main" id="storeFlightLists">
-						
-							<div class="history-home-page-main-left">
-								<i class="fa fa-plane"></i>
-							</div>
-							<div class="history-home-page-main-right">
-								<div class="history-recents">
-									<div class="history-recents-left">
-										<div class="deltopatfri">
-										<div class="deltopatfri1">
-											<span>DEL</span> <span><i class="fa fa-arrow-right"></i></span> <span>PAT</span>
-											</div>
-												<div class="deltopatfri2">
-											<span>fri,</span> <span>05</span> <span>Oct</span>
-										</div>
-											
-										</div>
-										<div class="deltopatfri">
-										<div class="deltopatfri1">
-											<span>DEL</span> <span><i class="fa fa-arrow-right"></i></span> <span>PAT</span>
-											</div>
-												<div class="deltopatfri2">
-											<span>fri,</span> <span>05</span> <span>Oct</span>
-										</div>
-											
-										</div>
-								</div>
-							
-								</div>
-							
-								
-								<div class="history-home-text2"><i class="fa fa-briefcase"></i>  Economy<span class="economyadlet">1 <i class="fa fa-male"></i> </span> </div>
-								
-							</div>
-						</div>
-						 
-					 </div>
-					 
-					 <!---->
 
                     </div>
 						<div class="overlayDivhome">					</div>
@@ -232,13 +189,28 @@
 
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    
+ <script type="text/javascript" src="js/my-app.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/iframeResizer.min.js"></script>
     <script type="text/javascript">
         app.initialize();
+		var readyStateCheckInterval = setInterval(function() {iFrameResize({ log: true,onMessage: function(messageData) {
+		  if(messageData.message.p=='hotel_detail'){
+            document.getElementById("app_hoteldetailLink").setAttribute('href',messageData.message.data);			
+			document.getElementById("app_hoteldetailLink").click();
+		  }
+		  else{
+          document
+            .getElementsByTagName('iframe')[0]
+            .iFrameResizer.sendMessage('Hello back from parent page')
+		  }
+			
+			
+        } });}, 10);
     </script>
 </body>
 
