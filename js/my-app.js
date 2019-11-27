@@ -52,6 +52,8 @@ var marker='40247';
 
 myApp.onPageInit('index', function (page) {
 $$('.pageFlashLoaderKK').show();	
+
+
 setTimeout(function(){ $$('.pageFlashLoaderKK').hide('slow'); }, 3000);	
 
 
@@ -111,7 +113,8 @@ $$('#storeFlightLists').html(htmlFlight);
 
 $$(document).on('pageInit',function(e){
  var page =e.detail.page;
-$$('.pageFlashLoaderKK').hide();
+
+
 if(page.name=='search-hotels'){
 	var hotelType =page.query.hotelType;
 	//=== Set default date ===/
@@ -372,10 +375,8 @@ if(page.name=='search-hotels'){
 	
    });
 
-  $$('.findFlightResults').on('click', function(e){
-		var url ='search-flight-results.html?destination='+$$('#destination').val()+'&latitude='+$$('#latitude').val()+'&longitude='+$$('#longitude').val()+'&checkIn='+$$('#startDate').val()+'&checkOut='+$$('#endDate').val()+'&Cri_currency=USD&Cri_language=en_US&hotelType=1&rooms='+$$('#number_of_rooms').val()+'&adults='+adultsArr+'&childs='+childsArr+'&childAge=';
-	    mainView.router.loadPage(url);
-   });
+  
+  
   
   
    var hotelObject = [];
@@ -399,13 +400,83 @@ if(page.name=='search-hotels'){
       var checkIn =startDateArr[2]+'-'+startDateArr[0]+'-'+startDateArr[1];
 	  var checkOut =endDateArr[2]+'-'+endDateArr[0]+'-'+endDateArr[1];
 
-	  var param ='marker='+marker+'&destination='+$$('#destination').val()+'&checkIn='+checkIn+'&checkOut='+checkOut+'&adults='+adults+'&children='+childAgeArr+'&language=en&currency=USD&&cityId='+$$('#region_id').val();
-     var url =TPHotelUrl+'?'+param;
-     window.location.href=url;
+	  //var url ='search-results.html?destination='+$$('#destination').val()+'&latitude='+$$('#latitude').val()+'&longitude='+$$('#longitude').val()+'&checkIn='+$$('#startDate').val()+'&checkOut='+$$('#endDate').val()+'&Cri_currency=USD&Cri_language=en_US&hotelType=1&rooms='+$$('#number_of_rooms').val()+'&adults=1&childs=&childAge=';
 	  
+	  var url ='search-results.html?destination='+$$('#destination').val()+'&latitude='+$$('#latitude').val()+'&longitude='+$$('#longitude').val()+'&checkIn='+checkIn+'&checkOut='+checkOut+'&Cri_currency=USD&Cri_language=en_US&hotelType=1&rooms='+$$('#number_of_rooms').val()+'&adults=1&childs=&childAge=';
+	
+	  
+	 // var url ='search-results.html?dest='+$$('#destination').val()+'&checkIn='+checkIn+'&checkOut='+checkOut+'&rooms='+$$('#number_of_rooms').val()+'&adults=2&children=0&childAge=0&language=en&currency=USD&cityId='+cityId+'&hotel_name=&datatype='; 
+	  //alert(url);
+	  mainView.router.loadPage(url);
+	 
    })
   
- }
+}
+
+/*=== Search Result page ====*/
+if(page.name=='search-results')
+{
+
+var destination =page.query.destination;
+var latitude =page.query.latitude;	 
+var longitude =page.query.longitude;	 
+var checkIn =page.query.checkIn;
+var checkOut =page.query.checkOut;
+var Cri_currency =page.query.Cri_currency;
+var Cri_language =page.query.Cri_language;
+var checkOut =page.query.checkOut;
+var rooms =page.query.rooms;
+var adults = page.query.adults;
+var childs = page.query.childs;
+var childAge = page.query.childAge;
+
+var cityId =latitude+'|'+longitude;
+
+$$('.search-resultspage').find('.search-resultsPageNavbarTitle').html(destination);
+$$('.search-resultspage').find('.search-resultsPageNavbarTitlef').html('CheckIn: '+checkIn+' | CheckOut: '+checkOut+' | Rooms: '+rooms);
+
+//$$('#iFrameResizer0').attr('src','');
+
+var frameSrc ='https://www.adivaha.com/whitelabel/search-results/?version=v2&pid=77A211&mid=ADIM5C437514F0303&device=app&dest='+destination+'&checkIn='+checkIn+'&checkOut='+checkOut+'&rooms='+rooms+'&adults='+adults+'&children='+childs+'&childAge='+childAge+'&language=en&currency=USD&cityId='+cityId+'&hotel_name=&datatype=';
+$$('.search-resultspage').find('iframe').attr('src',frameSrc);
+}
+
+/*=== Search Result page ====*/
+if(page.name=='hotel-detail'){
+
+var hotelid =page.query.hotelid;
+var hotelname =page.query.hotelname;
+var dest =page.query.dest;	
+var cityId  =page.query.cityId;
+var latlongArr =cityId.split('|');
+
+var latitude =latlongArr[0];
+var latitude =latlongArr[0];
+
+var search_Session_Id =page.query.search_Session_Id;
+var checkIn =page.query.checkIn;
+var checkOut =page.query.checkOut;
+var rooms =page.query.rooms;
+var adults = page.query.adults;
+var children = page.query.children;
+var childAge = page.query.childAge;
+var language =page.query.language;
+var currency =page.query.currency;
+
+
+
+$$('.hotel-detailpage').find('.search-resultsPageNavbarTitle').html(hotelname);
+$$('.hotel-detailpage').find('.search-resultsPageNavbarTitlef').html('<span>CheckIn: '+checkIn+' | CheckOut: '+checkOut+' | Rooms: '+rooms+'</span>');
+
+//$$('#iFrameResizer1').attr('src','');
+var frameSrc ='https://www.adivaha.com/whitelabel/online-booking/?version=v2&pid=77A211&mid=ADIM5C437514F0303&hotelid='+hotelid+'&dest='+dest+'&checkIn='+checkIn+'&checkOut='+checkOut+'&rooms='+rooms+'&adults='+adults+'&children='+children+'&language='+language+'&currency='+currency+'&cityId='+cityId+'&search_Session_Id='+search_Session_Id;
+
+//$$('#iFrameResizer1').attr('src',frameSrc);
+$$('.hotel-detailpage').find('iframe').attr('src',frameSrc);
+
+}
+
+
 
 
 /*=== Flight Modules ====*/ 
@@ -624,11 +695,19 @@ if(page.name=='search-flights'){
    var endDate =$$('#endDate').val();
    var endDateArr =endDate.split('/');
    var departDate =startDateArr[2]+'-'+startDateArr[0]+'-'+startDateArr[1];
-   
+   /*
    if(one_way=='false'){ 
     var returnDate =endDateArr[2]+'-'+endDateArr[0]+'-'+endDateArr[1];
    }else{ 
 	var returnDate ='';   
+   }*/
+   var returnDate =endDateArr[2]+'-'+endDateArr[0]+'-'+endDateArr[1];
+   
+   if(one_way=='true'){
+	one_way='Yes';   
+   }
+   else{
+	one_way='No';   
    }
    
    var adults =$$('#adults').val();
@@ -639,15 +718,98 @@ if(page.name=='search-flights'){
    var ct_guests =passenger+'passenger';
    var Flights_Return_direct ='enable';
    
-   var param ='marker='+marker+'&origin_name='+$$('#flight_from').val()+'&origin_iata='+$$('#flight_locationId').val()+'&destination_name='+$$('#flight_to').val()+'&destination_iata='+$$('#flight_to_locationId').val()+'&depart_date='+departDate+'&return_date='+returnDate+'&Flights_Return_direct='+Flights_Return_direct+'&with_request=true&adults='+$$('#adults').val()+'&children='+$$('#childs').val()+'&infants='+$$('#infants').val()+'&trip_class='+trip_class+'&currency=USD&locale=en&one_way='+one_way+'&ct_guests='+ct_guests+'&ct_rooms=1'; 
-   var url =TPFlightUrl+'?'+param;
-   window.location.href=url;
-   // mainView.router.loadPage(url);
+ 
+   var from_iata_name =$$('#flight_from').val();
+   var fromArr =from_iata_name.split(",");
+   var from_country =fromArr[fromArr.length-1].trim();
+   var to_iata_name =$$('#flight_to').val();
+   var toArr =to_iata_name.split(",");
+   var to_country =toArr[toArr.length-1].trim();	
+	
+   if( (from_country=='India') && (to_country=='India')){
+	 var isDomestic ='Yes';	
+	}
+	else{
+	 var isDomestic ='No';	
+	}
+   
+   var url ='search-flight-results.html?origin_name='+$$('#flight_from').val()+'&origin_iata='+$$('#flight_locationId').val()+'&destination_name='+$$('#flight_to').val()+'&destination_iata='+$$('#flight_to_locationId').val()+'&depart_date='+departDate+'&return_date='+returnDate+'&adults='+$$('#adults').val()+'&children='+$$('#childs').val()+'&infants='+$$('#infants').val()+'&cabin='+trip_class+'&currency=INR&locale=en&one_way='+one_way+'&isDomestic='+isDomestic; 
+   
 
+   mainView.router.loadPage(url);
+   
   })
 }
+
+/*=== Search Result page ====*/
+if(page.name=='search-flight-results')
+{
+var origin_name =page.query.origin_name;
+var origin_iata =page.query.origin_iata;	 
+var destination_name =page.query.destination_name;	 
+var destination_iata =page.query.destination_iata;
+var depart_date =page.query.depart_date;
+var return_date =page.query.return_date;
+var adults = page.query.adults;
+var children = page.query.children;
+var infants = page.query.infants;
+var currency = page.query.currency;
+var locale = page.query.locale;
+var one_way = page.query.one_way;
+var cabin = page.query.cabin;
+var isDomestic = page.query.isDomestic;
+
+$$('.item-title').html(origin_name+' ('+origin_iata+') To '+destination_name+' ('+destination_iata+')');
+//$$('#iFrameResizer0').attr('src','');
+var frameSrc ='https://www.adivaha.com/whitelabel/search-results/?version=v2&pid=77A211&mid=ADIM5C66A1BF561B1&mt=mt&aid=&origin_name='+origin_name+'&origin_iata='+origin_iata+'&destination_name='+destination_name+'&destination_iata='+destination_iata+'&depart_date='+depart_date+'&return_date='+return_date+'&one_way='+one_way+'&adults='+adults+'&children='+children+'&infants='+infants+'&currency='+currency+'&language='+locale+'&isDomestic='+isDomestic+'&cabin='+cabin;
+$$('#iFrameResizer0').attr('src',frameSrc);
+/*
+$$("#pageContentDiv").html('<iframe src="'+frameSrc+'" scrolling="no" frameborder="0" style="width: 100%; overflow: hidden;" id="iFrameResizer0"></iframe>');
+*/
+
+}
+
+ 
+myApp.onPageInit('contact-us', function (page) {
+  var pageContainer = $$(page.container);
+  pageContainer.find('.list-button').on('click', function () {
+    var username = pageContainer.find('input[name="username"]').val();
+    var password = pageContainer.find('input[name="password"]').val();
+    // Handle username and password
+    myApp.alert('Username: ' + username + ', Password: ' + password, function () {
+      mainView.goBack();
+    });
+  });
+});   
   
  
+
+if(page.name=='login-page')
+{
+
+
+
+var frameSrc ='https://www.adivaha.com/whitelabel/user-management/?version=v2&pid=77A211&mid=USERMANAGEMENT&mt=login&aid=&action=logout&ParentRestParam=';
+$$('#iFrameResizer0').attr('src',frameSrc);
+/*
+$$("#pageContentDiv").html('<iframe src="'+frameSrc+'" scrolling="no" frameborder="0" style="width: 100%; overflow: hidden;" id="iFrameResizer0"></iframe>');
+*/
+
+}
+
+
+if(page.name=='my-booking')
+{
+
+
+
+var frameSrc ='https://www.adivaha.com/whitelabel/my-booking/?version=v2&pid=77A211&mid=USERMANAGEMENT&mt=mt&aid=7&&ParentRestParam=';
+$$('#iFrameResizer0').attr('src',frameSrc);
+/*
+$$("#pageContentDiv").html('<iframe src="'+frameSrc+'" scrolling="no" frameborder="0" style="width: 100%; overflow: hidden;" id="iFrameResizer0"></iframe>');
+*/
+
+}
 });
 
 
